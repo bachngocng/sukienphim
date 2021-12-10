@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boruto</title>
+</head>
+<body onload="docReady()">
+<img id="boruto" src="https://ss-images.saostar.vn/wp700/2019/04/08/4927333/1.jpg"
+     style="position: absolute;left: 0;top:0" height="100" width="80"/>
+<script>
+    function upArrowPressed() {
+        let element = document.getElementById("boruto");
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+    }
+    function downArrowPressed() {
+        var element = document.getElementById("boruto");
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+    }
+    function leftArrowPressed() {
+        var element = document.getElementById("boruto");
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+    function rightArrowPressed() {
+        var element = document.getElementById("boruto");
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+
+    }
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>
